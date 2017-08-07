@@ -11,9 +11,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-materialize', source: 'https://rails-assets.org'
 end
 
-
-# Added-By-Waldo:Carrierwave allow us to upload images to our app
-gem 'carrierwave'
+# Added-By-Waldo: Paperclip allow us to upload images to our app
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
