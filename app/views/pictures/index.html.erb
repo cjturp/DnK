@@ -37,23 +37,7 @@
 
 <div class="row">
     <div class="col s12 center-align">
-   
-      <table>
-        <h5>Ready to try out our amazing app?</h5>
-        <tbody>
-          <% @pictures.each do |picture| %>
-            <tr>
-              <td><%= picture.title %></td>
-              <td><%= image_tag picture.url %></td>
-              <td><%= link_to 'Show', picture %></td>
-              <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-              <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-        <h4>
-          <%= link_to 'New Picture', new_picture_path %>
-        </h4>
+      <h5 class="text-center">Ready to try out our amazing app?</h5>
+      <%= link_to 'New Picture', new_picture_path, class:"text-center waves-effect waves-light btn-large" %>
   </div>
 </div>
