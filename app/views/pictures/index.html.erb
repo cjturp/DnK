@@ -1,25 +1,59 @@
-<h1>DnK MEMES</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row center-align">
+  <div class="col s12">
+<!--     <h5>Welcome to</h5> -->
+    <h1 class="pink-text text-darken-1">DnK</h1>
+    <h5>Memes are your fav things to do now</h5>
+  </div> <!-- Closer div of col s9 -->
+</div><!-- Closer div or row -->
 
-  <tbody>
-    <% @pictures.each do |picture| %>
-      <tr>
-        <td><%= picture.title %></td>
-        <td><%= image_tag picture.url %></td>
-        <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+    <div class="col s3">
+       <span class="responsive-img"><%= image_tag "shakira.png" %></span>
+    </div>
+    <div class="col s3">
+       <span class="responsive-img"><%= image_tag "imagine-dragons.png" %></span>
+    </div>
+    <div class="col s3">
+       <span class="responsive-img"><%= image_tag "jason-derulo.png" %></span>
+     </div>
+     <div class="col s3">
+       <span class="responsive-img"><%= image_tag "true.png" %></span>
+     </div>
+</div>
+<div class="row">
+    <div class="col s3">
+       <span class="responsive-img"><%= image_tag "beck.png" %></span>
+    </div>
+    <div class="col s3">
+       <span class="responsive-img"><%= image_tag "calvis-harris.png" %></span>
+    </div>
+    <div class="col s3">
+       <span class="responsive-img"><%= image_tag "frozen.png" %></span>
+     </div>
+     <div class="col s3">
+       <span class="responsive-img"><%= image_tag "midnight.png" %></span>
+     </div>
+</div>
 
-<br>
-<%= link_to 'New Picture', new_picture_path %>
+<div class="row">
+    <div class="col s12 center-align red accent-3">
+   
+      <table>
+        <h5>Ready to try out our amazing app?</h5>
+        <tbody>
+          <% @pictures.each do |picture| %>
+            <tr>
+              <td><%= picture.title %></td>
+              <td><%= image_tag picture.url %></td>
+              <td><%= link_to 'Show', picture %></td>
+              <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
+              <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+        <h4>
+          <%= link_to 'New Picture', new_picture_path %>
+        </h4>
+  </div>
+</div>
