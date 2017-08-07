@@ -1,8 +1,18 @@
+<div class="row grey lighten-5">
+
+  <div class="col s3">
+    
+  </div>
+  <div class="col s9">
+        <% @pictures.each do |picture| %>
+        <p class="badge" data-badge-caption="custom caption"><%= picture.title %></p> 
+  </div>
+  
 <table>
   <tbody>
-    <% @pictures.each do |picture| %>
+
       <tr>
-        <td><%= picture.title %></td>
+        <td></td>
         <td><%= image_tag picture.url %></td>
         <td><%= link_to 'Show', picture %></td>
         <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
@@ -11,3 +21,14 @@
     <% end %>
   </tbody>
 </table>
+
+
+
+
+
+
+
+
+
+
+</div>
