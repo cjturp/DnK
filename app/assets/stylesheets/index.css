@@ -1,6 +1,5 @@
-html body {
+html, html body {
   background-color: #1b1d25;
   color: white; 
+  font-family: GillSans, Calibri, Trebuchet, sans-serif;
 }
-
-/*Attention the color: blue is just for testing purposes*/
