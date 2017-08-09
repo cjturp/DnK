@@ -1,34 +1,24 @@
-<div class="row grey lighten-5">
+<div class="page-header"><h1>Photos</h1></div>
 
-  <div class="col s3">
+<%#= render @picture %>
+
+<div class="row center-align">
+    <% @pictures.each do |picture| %>
+
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image">
+          <%= image_tag picture.image.url, class: "responsive-img" %>
+          <span class="card-title"><%= picture.title %></span>
+        </div>
+        <div class="card-content blue lighten-4">
+        <%= link_to 'remove_red_eye', picture, class: "material-icons" %>
+        <%= link_to 'edit', edit_picture_path(picture), class: "material-icons" %>
+        <%= link_to 'delete', picture, method: :delete, data: { confirm: 'Are you sure?' }, class: "material-icons" %>  
+        </div>
+      </div>
+    </div>
+
+  <% end %>
     
-  </div>
-  <div class="col s9">
-        <% @pictures.each do |picture| %>
-        <p class="badge" data-badge-caption="custom caption"><%= picture.title %></p> 
-  </div>
-  
-<table>
-  <tbody>
-
-      <tr>
-        <td></td>
-        <td><%= image_tag picture.url %></td>
-        <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
 </div>

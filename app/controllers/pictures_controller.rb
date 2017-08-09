@@ -4,6 +4,7 @@ class PicturesController < ApplicationController
   # GET /pictures
   # GET /pictures.json
   def index
+    @pictures = Picture.order('created_at')
   end
 
   def user_pictures
@@ -30,7 +31,7 @@ class PicturesController < ApplicationController
 
     respond_to do |format|
       if @picture.save
-        format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
+        format.html { redirect_to user_pictures_path, notice: 'Picture was successfully created.' }
         format.json { render :show, status: :created, location: @picture }
       else
         format.html { render :new }
@@ -71,6 +72,6 @@ class PicturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def picture_params
-      params.require(:picture).permit(:title, :url)
+      params.require(:picture).permit(:title, :url, :image)
     end
 end

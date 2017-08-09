@@ -1,5 +1,23 @@
-<h1 class="newpicture">Add A New MEME</h1>
+<!-- Added this to test the papeclip gem -->
 
-<%= render 'form', picture: @picture %>
+<div class="page-header">
+	<h1>Add a New Meme</h1>
+</div>
 
-<%= link_to 'Back', pictures_path %>
+<%= form_for @picture do |f| %>
+  <%= render '/pictures/errors', object: @picture %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: 'form-control'%>
+  </div>
+
+  <%= f.submit 'Upload', class: 'btn btn-primary' %>
+<% end %>
+
+<%= link_to 'home', root_path, class: 'btn btn-primary' %>
